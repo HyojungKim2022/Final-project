@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>웹캠 테스트</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        #video-container {
+            position: relative;
+            width: 640px;
+            height: 480px;
+        }
+        #video {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            var video = document.getElementById('video');
+        
+            function playVideo() {
+                video.src = "video_start/";  // 수정: URL 변경
+            }
+            playVideo();
+            
+            var priceLabel = document.getElementById('price-label');
+            var priceValue = "{{ res_value }}";  // 수정: 가격 값 가져오기
+            
+            if (priceValue !== "") {
+                priceLabel.innerHTML = "가격: " + priceValue;  // 수정: HTML에 가격 표시
+            }
+        });
+    </script>
+</head>
+<body>
+    <h1>웹캠 테스트</h1>
+    <div id="video-container">
+        <img id="video">  
+    </div>
+    <h1 id="price-label"></h1>  <!-- 수정: 가격을 표시할 레이블 -->
+
+    <a href="{% url 'BLC:main' %}">start</a>
+</body>
+</html>
