@@ -1,21 +1,33 @@
+import sys
 import cv2
 
-video = cv2.VideoCapture('http://192.168.0.100:4747/mjpegfeed')
-frame_size = (int(video.get(cv2.CAP_PROP_FRAME_WIDTH)), int(video.get(video.CAP_PROP_FRAME_HEIGHT)))
+cap = cv2.VideoCapture(0) # 0: 메인 카메라
 
-while True:
-    ret, frame = video.read()
-    if not ret:
-        break
-        
-    cv2.imshow('frame', frame)
+if not cap.isOpened():
+    print("camera open failed")
+    sys.exit()
     
-    # Press 'Esc' to stop
-    key = cv2.waitKey(25)
-    if key == 27:				
+width = cap.get(cv2.CAP_PROP_FRAME_WIDTH)    
+height = cap.get(cv2.CAP_PROP_FRAME_HEIGHT)    
+fps = cap.get(cv2.CAP_PROP_FPS) # frame per second
+delay = round(1000/30)
+
+print(width, height, fps, delay)
+
+while True:    
+    ret, frame = cap.read() # frame : 이미지 한장 (shape : height x width x channel)        
+    
+    if not ret:
+        print("frame read error")
         break
-        
-if video.isOpened():
-    video.release()
+    cv2.imshow('camera', frame) # 재생    
+       
+    key = cv2.waitKey(delay) # delay(ms) 기다리기(sleep 효과)
+    if key == 27: # 27 : Esc key,  종료조건    
+        break
+
+if cap.isOpened(): # True
+    print('cap release!!')
+    cap.release()
     
 cv2.destroyAllWindows()
