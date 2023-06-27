@@ -85,6 +85,14 @@ main.container{
     padding: 10px;
 }
 
+.bar1{
+    margin-left: -30px;
+}
+
+.bar2{
+    margin-left: -20px;
+}
+
 div.item{
     min-height: 714px;
     max-height: 714px;
