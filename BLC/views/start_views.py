@@ -7,9 +7,10 @@ from mmdet.apis import init_detector
 from .make_prediction import make_predict, get_bndbox, calculate_price
 
 
-cfg = 'models/mobile_net/config.py'
-ckpt = 'models/mobile_net/epoch_35.pth'
-score_thr = 0.2
+cfg = 'models/dark_net/06261200_50set_Yolo_epoch_40_config.py'
+ckpt = 'models/dark_net/06261200_50set_Yolo_epoch_40.pth'
+
+score_thr = 0.1
 model = init_detector(cfg, ckpt, device='cuda:0')
 price_dict = json.load(open('price_4.json', encoding='UTF8'))
 
@@ -17,7 +18,7 @@ total_amount = 0
 each_amount = {}
 
 def show_start_page(request):
-    return render(request, 'BLC/start3.html')
+    return render(request, 'BLC/start.html')
 
 def webcam_stream(request):
     cap = cv2.VideoCapture(0)

@@ -13,7 +13,20 @@ const close = () => {
 
 document.querySelector(".payment").addEventListener("click", open);
 document.querySelector(".close").addEventListener("click", close);
-document.querySelector(".bg").addEventListener("click", close);
+document.querySelector('.bg').addEventListener("click", close);
+
+const open2 = () => {
+    document.querySelector(".modal2").classList.remove("hidden2");
+    setTimeout(close2, 2000);
+}
+
+const close2 = () => {
+    document.querySelector(".modal2").classList.add("hidden2");
+    document.querySelector(".modal").classList.add("hidden");
+}
+
+document.querySelector('.Yes').addEventListener("click", open2);
+document.querySelector('.bg2').addEventListener("click", close2);
 
 
 $(document).ready(function () {
@@ -34,18 +47,19 @@ $(document).ready(function () {
         total_amount.append(totalAmount + ' 원');
         totalQuantity = 0;
         num = 0;
-        var itemList = $('<ul></ul>');
+        var itemList = $('<td></td>');
         for (var key in eachAmount) {
-            num+=1
+            num += 1
             var price = eachAmount[key][0];
             var quantity = eachAmount[key][1];
-            itemList.append('<li>' + num + ' ' + key + ': ' + quantity + '개' + "\\" + price + '</li>');
+            // itemList.append('<li>' + '  ' + num + ' ' + key + ' ' + quantity + '개 ' + ' ' + ' \\' + price + '</li>');
+            itemList.append('<tr>' + '<td class="num">' + num + '</td>' + '<td class="name">' + key + '</td>' + '<td class="quantity">' + quantity + '</td>' + '<td class="price">\\' + price + '</td>' + '</tr>');
             totalQuantity += quantity;
         };
         total_quantity.append(totalQuantity);
         items_list.append(itemList);
     }
-    
+
     playVideo();
 
     setInterval(function () {
