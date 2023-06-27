@@ -51,6 +51,12 @@
                             </div>
                         </div>
                     </div>
+                    <div class="modal2 hidden2">
+                        <div class="bg2"></div>
+                        <div class="modalBox2">
+                            <p>결제 완료 되었습니다.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="right">
@@ -72,6 +78,22 @@
       
         document.querySelector(".payment").addEventListener("click", open);
         document.querySelector(".close").addEventListener("click", close);
+        document.querySelector('.bg').addEventListener("click", close);
+
+        const open2 = () => {
+        document.querySelector(".modal2").classList.remove("hidden2");
+        setTimeout(close2, 2000);
+        }
+
+        const close2 = () => {
+          document.querySelector(".modal2").classList.add("hidden2");
+          document.querySelector(".modal").classList.add("hidden");
+        }
+
+        document.querySelector('.Yes').addEventListener("click", open2);
+        document.querySelector('.bg2').addEventListener("click", close2);
+
+
     </script>
 </body>
 </html>

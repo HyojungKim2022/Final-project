@@ -97,15 +97,16 @@ div.item{
 }
 
 .check{
-    position: fixed;
+    position: relative;
     padding: 10px;
     margin-left: 350px;
     font-weight: bold;
 }
 
 .pay-button {
-    align-items:end;
+    position: relative;
     float: right;
+    margin-top: -70px;
 }
 
 .pay-button .payment{
@@ -190,16 +191,47 @@ div.item{
     background-color: #557863;
 }
 
-.modalBox p{
-    align-items: center;
-    font-size: 18px;
-}
-
-
 .hidden {
     display: none;
 }
-    
+
+.modal2{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal2 .bg2{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modalBox2{
+    position: absolute;
+    background-color: #fff;
+    align-items: center;
+    text-align: center;
+    border-radius: 5%;
+    width: 200px;
+    height: 100px;
+}
+
+.modalBox2 p{
+    margin-top: 40px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.hidden2 {
+    display: none;
+}
+
 .right{
     width: 70%;
     float: right;
