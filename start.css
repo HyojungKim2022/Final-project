@@ -31,14 +31,14 @@ header.container{
 }
 
 header h2{
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: bold;
     text-shadow: 2px 2px 2px #3C5145;
     color: #557863;
     margin: 0 auto;
 }
 header h2 button{
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: bold;
     float: right;
     color: #557863;
@@ -51,6 +51,7 @@ header h2 button{
 header h2 button:hover{
     color: black;
 }
+
 main{
     background-color: transparent;
     position: relative;
@@ -78,6 +79,7 @@ main.container{
 }
 
 .bar{
+    display: flex;
     width: 100%;
     background-color: #EAE6E6;
     align-items: center;
@@ -86,11 +88,7 @@ main.container{
 }
 
 .bar1{
-    margin-left: -30px;
-}
-
-.bar2{
-    margin-left: -20px;
+    margin-left: 20px;
 }
 
 div.item{
@@ -98,36 +96,55 @@ div.item{
     max-height: 714px;
 }
 
+table {
+    width: 100%;
+}
+
+td {
+    width: 138px;
+    font-size: 18px;
+    text-align: center;
+}
+td .num{
+    width: 50px;
+}
+
+td .name{
+    width: 314px;
+}
+
+td .quantity{
+    width: 50px;
+}
+
 .total{
+    display: fixed;
     background-color: #EAE6E6;
     min-height: 170px;
     max-height: 170px;
+    width: auto;
 }
 
 .check{
-    position: relative;
     padding: 10px;
-    margin-left: 350px;
     font-weight: bold;
-}
-
-.pay-button {
-    position: relative;
     float: right;
-    margin-top: -70px;
 }
 
-.pay-button .payment{
+.check#quantity{
+    margin-right: 20px;
+}
+
+.payment{
     background-color: #A8A48DC7;
     border: transparent;
     padding: 5px;
+    margin-top: 20px;
     font-size: 13px;
-    margin-top: 100px;
-    margin-right: 20px;
     font-weight: bold;
 }
 
-.pay-button .payment:hover{
+.payment:hover{
     background-color: black;
     color: white;
 }
