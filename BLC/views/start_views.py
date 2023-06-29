@@ -7,13 +7,12 @@ from mmdet.apis import init_detector
 from .make_prediction import make_predict, get_bndbox, calculate_price
 
 
-cfg = 'models/dark_net/06261200_50set_Yolo_epoch_40_config.py'
-ckpt = 'models/dark_net/06261200_50set_Yolo_epoch_40.pth'
-
-score_thr = 0.1
+cfg = 'models/hj/epoh14/config_14.py'
+ckpt = 'models/hj/epoh14/epoch_14 (2).pth'
+score_thr = 0.2
 model = init_detector(cfg, ckpt, device='cuda:0')
-price_dict = json.load(open('price_4.json', encoding='UTF8'))
 
+price_dict = json.load(open('price_4.json', encoding='UTF8'))
 total_amount = 0
 each_amount = {}
 

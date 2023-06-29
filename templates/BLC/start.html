@@ -14,7 +14,6 @@
         crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="{% static 'start.css' %}">
 </head>
-
 <body>
     <header>
         <div class="container">
@@ -22,8 +21,7 @@
                 <h2>
                     <a><i class="fa-solid fa-bars"></i></a>
                     <a>BLC</a>
-                    <button type="button" class="exit" id="mainButton"><i
-                            class="fa-solid fa-right-from-bracket"></i></button>
+                    <button type="button" class="exit" id="mainButton"><i class="fa-solid fa-right-from-bracket"></i></button>
                 </h2>
 
             </div>
@@ -48,10 +46,8 @@
                 </div>
                 <div class="total">
                     <div class="check">
-                        <a><strong>총수량 : </strong><span id="total_quantity">0개</span></a><br>
-                        <a><strong>총가격 : </strong><span id="total_amount">0원</span></a><br>
-                    </div>
-                    <div class="pay-button">
+                        <a id="quantity"><strong>총수량 : </strong><span id="total_quantity">0개</span></a><br>
+                        <a id="price"><strong>총가격 : </strong><span id="total_amount">0원</span></a><br>
                         <button class="payment">결제하기</button>
                     </div>
                     <div class="modal hidden">

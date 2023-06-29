@@ -1,5 +1,6 @@
-from mmdet.apis import inference_detector
 import cv2
+from mmdet.apis import inference_detector
+
 
 color_map = [[255, 0, 0], [0, 255, 0], [0, 0, 255], [255, 255, 0], [255, 0, 255], [0, 255, 255],]
 
