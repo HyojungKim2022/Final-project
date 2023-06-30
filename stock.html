@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Final Project_Adminpage</title>
+  <link  rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="stylesheet" href="stock.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="banner">
+                <h1>
+                    <a id="logo">BLC</a>
+                    <a href="#" onclick="location.href='admin_main.html'"><button class="exit"><i class="fa-solid fa-right-from-bracket"></i></button></a>
+                </h1>
+            </div>
+            <div class="page">
+                <a href="#" onclick="location.href='stock.html'" id="stock">STOCK</a>
+                <a href="#" onclick="location.href='sales.html'" id="sales">SALES</a>
+                <a href="#" onclick="location.href='shelf.html'" id="check">CHECK</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="searchbox">
+            <input type="text" id="searchInput" placeholder="Search" onkeyup="searchTable()">
+        </div>
+    <table class="stock">
+        <thead>
+            <tr>
+                <th style="width: 10%;">상품 ID</th>
+                <th style="width: 50%;">상품명</th>
+                <th style="width: 20%;">상품 위치</th>
+                <th style="width: 10%;">수량(개)</th>
+                <th style="width: 10%;">가격(\)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in items %}
+            <tr>
+                <td style="text-align: center;">{{ item.item_id }}</td>
+                <td style="text-align: left;">{{ item.item_name }}</td>
+                <td style="text-align: center;">{{ item.item_location }}</td>
+                <td style="text-align: right;">{{ item.item_quantity }}</td>
+                <td style="text-align: right;">{{ item.item_price }}</td>
+            </tr>
+            {% Endfor %}
+        </tbody>
+    </table>
+    </main>
+    <script>
+        var originalRows = []; // Store the original table rows
+    
+        window.onload = function () {
+          var table = document.querySelector(".stock");
+          var rows = table.getElementsByTagName("tr");
+    
+          // Store the original table rows in the originalRows array
+          for (var i = 1; i < rows.length; i++) {
+            originalRows.push(rows[i]);
+          }
+        };
+    
+        function searchTable() {
+          var input = document.getElementById("searchInput");
+          var filter = input.value.toUpperCase();
+          var table = document.querySelector(".stock");
+          var rows = table.getElementsByTagName("tr");
+    
+          // Reset the table to the original rows
+          for (var i = 1; i < rows.length; i++) {
+            table.appendChild(originalRows[i - 1]);
+          }
+    
+          for (var i = 1; i < rows.length; i++) {
+            var cells = rows[i].getElementsByTagName("td");
+            var found = false;
+    
+            for (var j = 0; j < cells.length; j++) {
+              var cell = cells[j];
+              if (cell) {
+                var cellText = cell.textContent || cell.innerText;
+                if (cellText.toUpperCase().indexOf(filter) > -1) {
+                  found = true;
+                  break;
+                }
+              }
+            }
+    
+            if (found) {
+              rows[i].style.display = "";
+            } else {
+              rows[i].style.display = "none";
+            }
+          }
+        }
+      </script>
+</body>
+</html>
