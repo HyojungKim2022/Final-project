@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Belanosima&family=Gruppo&family=Press+Start+2P&family=Righteous&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a, a:link, a:visited{
+    color:inherit;
+    text-decoration:none;
+}
+.container{
+    width: device-width;
+    height: device-height;
+    margin: 0 auto;
+}
+
+body{
+    margin: 0 auto;
+    background-color: black;
+}
+header{
+    position: absolute;
+    color:black;
+    z-index: 1;
+    width: 100%;
+    padding: 10px;
+}
+header.container{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+header button{
+    background:transparent;
+    border:0;
+    cursor: pointer;
+}
+
+h1 .logo{
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-shadow: 3px 3px 3px #3C5145;
+    color: #557863;
+    font-family: 'Belanosima', sans-serif;
+}
+
+h1 .type{
+    font-size: 1rem;
+    font-weight: bold;
+    text-shadow: 3px 3px 3px #3C5145;
+    color: #e6efe9;
+    margin: 0 auto;
+    float: right;
+    font-family: 'Belanosima', sans-serif;
+}
+
+main::before{
+    content:'';
+    background: linear-gradient(to top,black,transparent);
+    position: absolute;
+    left:0;
+    height: 100%;
+    width: 100%;
+}
+main{
+    width:100%;
+    height: 900px;
+    color: #557863;
+    background: rgb(95, 93, 93);
+    margin-top: 50;
+    display:flex;
+    align-items: center;
+}
+.title{
+    font-size: 22em;
+    text-align: left;
+    font-weight: 500;
+    text-shadow: 5px 5px 8px #3C5145;
+    font-family: 'Belanosima', sans-serif;
+}
+.click{
+    background-color: transparent;
+    padding: 10px;
+    position: fixed;
+    left: 47%;
+    cursor: pointer;
+    margin-top: 100px;
+}
+
+.sales{
+    background-color: transparent;
+    font-weight: bold;
+    color: #FFD400;
+    font-size: 1.5rem;
+    font-family: 'Belanosima', sans-serif;
+}
+
+.stock{
+    background-color: transparent;
+    font-weight: bold;
+    color: #FFD400;
+    font-size: 1.5rem;
+    font-family: 'Belanosima', sans-serif;
+}
+
+.sales:hover{
+    color: aliceblue;
+}
+
+.stock:hover{
+    color: aliceblue;
+}

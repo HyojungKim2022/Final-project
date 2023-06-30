@@ -4,19 +4,17 @@ from django.http import StreamingHttpResponse
 import time
 
 import json
-from mmdet.apis import init_detector
 from .make_grid_prediction import draw_grid_line, make_grid_predict, make_grid_frame
+from ..model_init import init_model
 
-cfg = 'models/hj/epoh14/config_14.py'
-ckpt = 'models/hj/epoh14/epoch_14 (2).pth'
 score_thr = 0.6
-model = init_detector(cfg, ckpt, device='cuda:0')
+model = init_model()
 
 grid_x = 2
 grid_y = 1
 
 def show_shelf_page(request):
-    return render(request, 'BLC/shelf.html')
+    return render(request, 'admin/shelf.html')
 
 def grid_webcam_stream(request):
     cap = cv2.VideoCapture(0)

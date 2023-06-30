@@ -36,6 +36,7 @@ $(document).ready(function () {
     var total_amount = $('#total_amount');
     var totalQuantity = 0;
     var num = 0;
+    
     function playVideo() {
         video.src = "video_start/";
     }

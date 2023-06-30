@@ -3,14 +3,12 @@ from django.shortcuts import render
 from django.http import StreamingHttpResponse, JsonResponse
 
 import json
-from mmdet.apis import init_detector
 from .make_prediction import make_predict, get_bndbox, calculate_price
+from ..model_init import init_model
 
+score_thr = 0.6
 
-cfg = 'models/hj/epoh14/config_14.py'
-ckpt = 'models/hj/epoh14/epoch_14 (2).pth'
-score_thr = 0.2
-model = init_detector(cfg, ckpt, device='cuda:0')
+model = init_model()
 
 price_dict = json.load(open('price_4.json', encoding='UTF8'))
 total_amount = 0

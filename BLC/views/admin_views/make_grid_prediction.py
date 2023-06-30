@@ -3,7 +3,7 @@ from mmdet.apis import inference_detector
 
 
 def compare_label(frame, grid_x, grid_y, results):
-
+    
     return 0
 
 def draw_grid_line(frame, grid_x, grid_y):
