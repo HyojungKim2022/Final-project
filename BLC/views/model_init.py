@@ -9,6 +9,7 @@ def init_model(cfg=cfg, ckpt=ckpt):
 
     if model is None:
         model = init_detector(cfg, ckpt, device='cuda:0')
+
         setattr(settings, 'MY_MODEL', model)
 
     return model

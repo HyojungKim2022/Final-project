@@ -76,3 +76,16 @@ $(document).ready(function () {
         });
     }, 1000);
 });
+
+
+document.querySelector('.Yes').addEventListener("click", function() {
+    $.ajax({
+        url: 'process_payment/',
+        type: 'POST',
+        dataType: 'json',
+        success: function(response) {
+            // 결제 완료 메시지 출력 등 원하는 동작 수행
+            console.log(response.message);
+        }
+    });
+});
