@@ -24,6 +24,12 @@
   <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=white">
 </div>
 
+<h3>Deep-Learning</h3>
+<p>Model</p>
+<div>
+  <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=yolo3&logoColor=white">
+</div>
+
 <h3>Communication & plan</h3>
 <div>
   <img src="https://img.shields.io/badge/slack-4A154B?style=for-the-badge&logo=slack&logoColor=white">
