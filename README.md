@@ -10,7 +10,7 @@
   <img src="https://img.shields.io/badge/pycharm-000000?style=for-the-badge&logo=pycharm&logoColor=white">
   <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
 </div>
-
+<br>
 <h3>Web-page</h3>
 <p>Front-end</p>
 <div>
@@ -23,7 +23,7 @@
   <img src="https://img.shields.io/badge/django-092E20?style=for-the-badge&logo=django&logoColor=white">
   <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=white">
 </div>
-
+<br>
 <h3>Deep-Learning</h3>
 <p>Model</p>
 <div>
