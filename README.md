@@ -4,7 +4,9 @@
 <p>Calculate the item's price with the pictures</p>
 
 <h2>Project period</h2>
-- 2023-06-14 ~
+ <ul>
+   <li>2023-06-14 ~</li>
+ </ul>
 
 <h2>Our team</h2>
   
