@@ -1,6 +1,11 @@
 # BLC project(Final)
 
+<h2>Introduction</h2>
 
+<h2>Project period</h2>
+
+<h2>Our team</h2>
+  
 <h2>Stacks</h2>
 <h3>Environment</h3>
 <div>
