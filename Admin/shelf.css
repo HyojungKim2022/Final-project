@@ -14,7 +14,7 @@ a, a:link, a:visited{
 }
 
 header{
-    position: absolute;
+    position: relative;
     background-color: #FFFCFC;
     z-index: 1;
     width: 100%;
@@ -68,29 +68,35 @@ body{
     background: linear-gradient(transparent, #557863) fixed;
 }
 
+main{
+    position: absolute;
+    left: 30%;
+    padding-top: 100px;
+}
+
 .screen {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: block;
+    padding: 5px;
 }
 
 .video{
     width: 640px;
     height: 480px;
-    /* margin-top: 220px; */
     text-align: center;
     background-color: #FFFCFC;
 
 }
 
 .drop-down{
-    margin-top: 210px;
-    margin-left: 1000px;
-    margin-bottom: 10px;
+    position: relative;
+    text-align: center;
+    justify-content: center;
+    padding-left: 50px;
 }
 
-main{
-    vertical-align: middle;
+label{
+    font-weight: 700;
+    font-size: 17px;
 }
 
 form {
