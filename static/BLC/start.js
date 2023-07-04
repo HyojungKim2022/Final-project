@@ -41,6 +41,8 @@ $(document).ready(function () {
         video.src = "video_start/";
     }
 
+    playVideo();
+    
     function updateAmount(totalAmount, eachAmount) {
         items_list.empty();
         total_amount.empty();
@@ -61,7 +63,7 @@ $(document).ready(function () {
         items_list.append(itemList);
     }
 
-    playVideo();
+    
 
     setInterval(function () {
         $.ajax({

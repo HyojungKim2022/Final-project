@@ -6,14 +6,8 @@ from .make_prediction import make_predict, get_bndbox, calculate_price
 from ..model_init import init_model
 
 
-score_thr = 0.3
+score_thr = 0.9
 model = init_model()
-model.CLASSES = (65621, 50098, 30152, 45219, 30064, 30166, 50117, 50062, 30120, 20211,
-       10178, 45221, 10092, 30061, 10091, 30119, 25679, 30086, 50063, 15033,
-       45222, 65629, 65858, 30066, 50061, 20164, 10094, 90078, 30140, 15046,
-       45227, 30060, 15175, 10093, 65723, 90072, 10210, 30292, 10209, 45220,
-       35044, 30099, 30096, 65727, 65719, 65890, 90073, 10095, 20167, 30291)
-
 
 total_amount = 0
 each_amount = {}
@@ -21,8 +15,10 @@ each_amount = {}
 def show_start_page(request):
     return render(request, 'BLC/start.html')
 
+path = 'C:/Users/thffh/Documents/project/final/test/IMG_1873.mov'
 def webcam_stream(request):
-    cap = cv2.VideoCapture(0)
+    # cap = cv2.VideoCapture(0)
+    cap = cv2.VideoCapture(path, apiPreference=None)
 
     while True:
         ret, frame = cap.read()
@@ -71,9 +67,9 @@ def process_payment(request):
     store_id = 1
     store = Store.objects.get(pk=store_id)
     sale_date = datetime.date.today()  # 오늘 날짜
-    total_price = total_amount  # start.js에서 전달받은 총 결제 금액
+    total_price = total_amount
     sale = Sales.objects.create(store=store, sale_date=sale_date, total_price=total_price)
-
+     
     # DetailSale 데이터베이스에 상품 정보 저장
     for item_name, (price, quantity) in each_amount.items():
         item = Items.objects.get(item_name=item_name)

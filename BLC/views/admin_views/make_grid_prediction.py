@@ -2,9 +2,6 @@ import cv2
 from mmdet.apis import inference_detector
 
 
-def compare_label(frame, grid_x, grid_y, results):
-    
-    return 0
 
 def draw_grid_line(frame, grid_x, grid_y):
     dst_frame = frame.copy()
@@ -25,10 +22,10 @@ def draw_grid_line(frame, grid_x, grid_y):
     
     return dst_frame
 
-def make_grid_predict(model, grid_frame, score_thr):
-    result = inference_detector(model, grid_frame)
+def make_grid_predict(model, frame, score_thr):
+    result = inference_detector(model, frame)
     res = [
-        model.CLASSES[idx]
+        {model.CLASSES[idx]: box[:4]}
         for idx, boxes in enumerate(result)
         if boxes.any()
         for box in boxes
