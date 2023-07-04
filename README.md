@@ -5,10 +5,14 @@
 
 <h2>Project period</h2>
  <ul>
-   <li>2023-06-14 ~</li>
+   <li>2023-06-14 ~ </li>
  </ul>
 
 <h2>Our team</h2>
+<ul>
+ <li>Webpage - </li>
+ <li>Deeplearning - </li>
+</ul>
   
 <h2>Stacks</h2>
 <h3>Environment</h3>
