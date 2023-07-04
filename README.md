@@ -1,9 +1,10 @@
 # BLC project(Final)
 
 <h2>Project Summary</h2>
-
+<p>Calculate the item's price with the pictures</p>
 
 <h2>Project period</h2>
+- 2023-06-14 ~
 
 <h2>Our team</h2>
   
