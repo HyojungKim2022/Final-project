@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sales Calendar</title>
+  <link  rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="sales.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="banner">
+                <h2>
+                    <button class="logo">BLC</button>
+                    <a href="#" onclick="location.href='admin_main.html'"><button class="exit"><i class="fa-solid fa-right-from-bracket"></i></button></a>
+                </h2>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="calendar">
+            <div class="header">
+                <button id="prev-month-btn">&lt;</button>
+                <h2 id="month-year"></h2>
+                <button id="next-month-btn">&gt;</button>
+            </div>
+            <div class="days"></div>
+        </div>
+        <div id="sales-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 id="modal-date">{{ sales.date }}</h2>
+                <p id="modal-sales">Sales: {{ sales.amount }}</p>
+            <!-- Add other details as needed -->
+            </div>
+        </div>
+        <div id="total-sales">
+            <h3>Total Sales:</h3>
+            <p id="total-sales-amount"></p>
+        </div>
+    </main>
+  <script src="sales.js"></script>
+</body>
+</html>
