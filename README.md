@@ -32,7 +32,7 @@
   <img src="https://img.shields.io/badge/faster_rcnn-181717?style=for-the-badge&logo=github&logoColor=white">
   <img src="https://img.shields.io/badge/efficeint-det-181717?style=for-the-badge&logo=github&logoColor=white">
 </div>
-
+<br>
 <h3>Communication & plan</h3>
 <div>
   <img src="https://img.shields.io/badge/slack-4A154B?style=for-the-badge&logo=slack&logoColor=white">
