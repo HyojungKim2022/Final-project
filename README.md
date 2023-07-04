@@ -27,7 +27,7 @@
 <h3>Deep-Learning</h3>
 <p>Model</p>
 <div>
-  <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=yolo3&logoColor=white">
+  <img src="https://img.shields.io/badge/yolo3-181717?style=for-the-badge&logo=github&logoColor=white">
 </div>
 
 <h3>Communication & plan</h3>
