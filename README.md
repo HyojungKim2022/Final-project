@@ -5,7 +5,7 @@
 
 <h2>Project period</h2>
  <ul>
-   <li>2023-06-14 ~ </li>
+   <li>2023-06-12 ~ </li>
  </ul>
 
 <h2>Our team</h2>
