@@ -16,7 +16,7 @@
 
 ## Main works
 - Learning has been accumulated through the use of three datasets, resulting in the generation of PTH files. 
-![image](https://github.com/HyojungKim2022/Final-project/assets/128121364/86888961-14fd-4f34-9069-5877463e9da4)
+![image](https://github.com/HyojungKim2022/Final-project/assets/128121364/a7266f4b-875e-4c6a-b8d4-4461b697702f)
 
 
 ## Other works
