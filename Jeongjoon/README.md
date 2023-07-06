@@ -8,11 +8,11 @@
 - EfficientDet from MMdetection 3.0 (https://github.com/open-mmlab/mmdetection/tree/3.x/projects/EfficientDet)
 - Instructions: https://mmengine.readthedocs.io/en/latest/
 ### Datasets 
-1) One product per one image
+1) One product per image
    - AIhub: '상품 이미지' 
     (https://www.aihub.or.kr/aihubdata/data/view.docurrMenu=115&topMenu=100&aihubDataSe=realm&dataSetSn=64)
-2) Two products per one image (by Soohwan)
-3) Four products per one image (by Mainho)
+2) Two kinds of products per image (by Soohwan)
+3) Four kinds of products per image (by Mainho)
 
 ## Main works
 - Learning has been accumulated through the use of three datasets, resulting in the generation of PTH files. 
