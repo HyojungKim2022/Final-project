@@ -38,3 +38,6 @@
 
 4) Exploration of other models
 - RTMDet_s model from MMdetection 3.0 (https://github.com/open-mmlab/mmdetection/tree/3.x/configs/rtmdet) and evaluate its performance for the BLC system
+
+## PTH
+- The set of PTH files represents the results of this work.
