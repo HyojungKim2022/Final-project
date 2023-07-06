@@ -2,7 +2,7 @@
 ## Introduction
 ### Purpose
 - The purpose of this final project is to develop a payment system that doesn't require barcodes at checkout, using a vision model.
-- The system developed for this project is named "Barcodeless Calculator" (BCL)
+- The system developed for this project is named "Barcodeless Calculator" (BLC)
 
 ### Model
 - EfficientDet from MMdetection 3.0 (https://github.com/open-mmlab/mmdetection/tree/3.x/projects/EfficientDet)
