@@ -31,7 +31,8 @@
 
 3) Addressing Korean decoding errors
 - The MMDetection 3.0 library, which is used in this project, relies on OpenCV for image processing. However, OpenCV has limitations when it comes to displaying Korean text. To overcome this issue, the Python Imaging Library (PIL) will be used to handle Korean text rendering and display in the context of MMDetection 3.0
-![image](https://github.com/HyojungKim2022/Final-project/assets/128121364/a16bc235-3bab-4c04-8054-9fb7b19b9069)
+![image](https://github.com/HyojungKim2022/Final-project/assets/128121364/f445d26e-1043-4edf-89ac-a29e2009b105)
+
 
 
 
