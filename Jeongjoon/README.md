@@ -16,9 +16,8 @@
 
 ## Main works
 - Learning has been accumulated through the use of three datasets, resulting in the generation of PTH files. 
-1) First datasets:
-2) Second datasets:
-3) Third datasets:
+![image](https://github.com/HyojungKim2022/Final-project/assets/128121364/86888961-14fd-4f34-9069-5877463e9da4)
+
 
 ## Other works
 1) XML2JSON conversion
