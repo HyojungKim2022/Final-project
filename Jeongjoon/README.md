@@ -24,8 +24,10 @@
 1) XML2JSON conversion
 - the XML2JSON tool was used (https://github.com/yukkyo/voc2coco) to convert the dataset annotations from XML to JSON format.
 
+
 2) Resizing for img files
 - To enhance the learning efficiency, the images with dimensions of 3000 x 3000 were downscaled to 1000 x 100.
+
 
 3) Addressing Korean decoding errors
 - The MMDetection 3.0 library, which is used in this project, relies on OpenCV for image processing. However, OpenCV has limitations when it comes to displaying Korean text. To overcome this issue, the Python Imaging Library (PIL) will be used to handle Korean text rendering and display in the context of MMDetection 3.0
