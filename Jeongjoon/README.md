@@ -6,7 +6,7 @@
 
 ### Model
 - EfficientDet from MMdetection 3.0 (https://github.com/open-mmlab/mmdetection/tree/3.x/projects/EfficientDet)
-
+- Instructions: https://mmengine.readthedocs.io/en/latest/
 ### Datasets 
 1) One product per one image
    - AIhub: '상품 이미지' 
