@@ -15,7 +15,8 @@
 3) Four kinds of products per image (by Mainho)
 
 ## Main works
-- Learning has been accumulated through the use of three datasets, resulting in the generation of PTH files. 
+- Learning has been accumulated through the use of three datasets, resulting in the generation of PTH files.
+- The batch size is limited due to a CUDA memory issue. 
 ![image](https://github.com/HyojungKim2022/Final-project/assets/128121364/a7266f4b-875e-4c6a-b8d4-4461b697702f)
 
 
