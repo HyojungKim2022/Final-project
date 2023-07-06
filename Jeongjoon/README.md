@@ -1,4 +1,4 @@
-![image](https://github.com/HyojungKim2022/Final-project/assets/128121364/0a627e40-3f37-4b7b-83a9-5b8d371a04ae)# Final-project
+# Final-project
 ## Introduction
 ### Purpose
 - The purpose of this final project is to develop a payment system that doesn't require barcodes at checkout, using a vision model.
