@@ -1,4 +1,4 @@
-# Final-project
+![image](https://github.com/HyojungKim2022/Final-project/assets/128121364/0a627e40-3f37-4b7b-83a9-5b8d371a04ae)# Final-project
 ## Introduction
 ### Purpose
 - The purpose of this final project is to develop a payment system that doesn't require barcodes at checkout, using a vision model.
@@ -29,6 +29,7 @@
 
 3) Addressing Korean decoding errors
 - The MMDetection 3.0 library, which is used in this project, relies on OpenCV for image processing. However, OpenCV has limitations when it comes to displaying Korean text. To overcome this issue, the Python Imaging Library (PIL) will be used to handle Korean text rendering and display in the context of MMDetection 3.0
+![image](https://github.com/HyojungKim2022/Final-project/assets/128121364/e37b0788-b902-409c-ae5d-0e793159860a)
 
 
 4) Exploration of other models
