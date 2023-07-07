@@ -1,1 +1,4 @@
 ## python environment
+
+opencv >= 4.6
+numpy >= 1.21
