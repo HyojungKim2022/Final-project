@@ -1,6 +1,12 @@
 
 var originalRows = []; // Store the original table rows
 
+$(document).ready(function(){
+    $("select[name=search_mode]").change(function () {
+    $("#searchForm").submit();
+    });
+});
+
 window.onload = function () {
     var table = document.querySelector(".stock");
     var rows = table.getElementsByTagName("tr");

@@ -55,15 +55,12 @@ $(document).ready(function () {
             num += 1
             var price = eachAmount[key][0];
             var quantity = eachAmount[key][1];
-            // itemList.append('<li>' + '  ' + num + ' ' + key + ' ' + quantity + '개 ' + ' ' + ' \\' + price + '</li>');
             itemList.append('<tr>' + '<td class="num">' + num + '</td>' + '<td class="name">' + key + '</td>' + '<td class="quantity">' + quantity + '</td>' + '<td class="price">\\' + price + '</td>' + '</tr>');
             totalQuantity += quantity;
         };
         total_quantity.append(totalQuantity);
         items_list.append(itemList);
     }
-
-    
 
     setInterval(function () {
         $.ajax({

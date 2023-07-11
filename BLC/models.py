@@ -22,7 +22,8 @@ class Sales(models.Model):
         db_table = 'sales'
     
 class DetailSale(models.Model):
-    sale = models.OneToOneField('Sales', models.DO_NOTHING, primary_key=True)
+    detail_sale_id = models.AutoField(primary_key=True)
+    sale = models.ForeignKey('Sales', models.DO_NOTHING)
     item = models.ForeignKey('Items', models.DO_NOTHING)
     quantity = models.IntegerField(blank=True, null=True)
     unit_price = models.IntegerField(blank=True, null=True)

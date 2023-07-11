@@ -184,27 +184,11 @@ main{
   font-size: 15px;
   font-weight: bold;
 }
-
-.modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  justify-content: center;
-  align-items: center;
-}
-
-.modal-content {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 5px;
-  max-width: 400px;
-}
-
 .close {
+  float: right;
+  cursor: pointer;
+}
+.close2 {
   float: right;
   cursor: pointer;
 }
@@ -224,4 +208,100 @@ main{
   background-color: transparent;
   border: transparent;
   font-size: 1.3rem;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  height: 700px;
+  width: 1000px;
+}
+
+
+table, td, th{
+  margin: 0 auto;
+  margin-top: 200px;
+  padding: auto;
+  border : 1px solid black;
+  border-collapse : collapse;
+  text-align: center;
+  width: 70%;
+  height: 50%;
+}
+.sale_date{
+  width: 40%;
+}
+.sale_id{
+  width: 30%;
+}
+td.sale_price{
+  width: 20%;
+  text-align: right;
+}
+
+
+.modal2 {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content2 {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  height: 850px;
+  width: 600px;
+}
+.detail{
+  margin: 0 auto;
+  margin-top: 70px;
+  padding: auto;
+  border : 1px solid black;
+  border-collapse : collapse;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+.item_id{
+  width: 20%;
+}
+.item_name{
+  width: 40%;
+}
+.item_quantity{
+  width: 10%;
+}
+.unit_price{
+  width: 15%;
+}
+.item_price{
+  width: 15%;
+}
+
+td.item_name{
+  text-align: left;
+}
+td.item_quantity, td.unit_price, td.item_price{
+  text-align: right;
 }

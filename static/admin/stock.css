@@ -97,3 +97,13 @@ td, th{
     padding: 5px;
 }
 
+th{
+    font-weight: bold;
+}
+
+#search_mode{
+    background-color: #557863;
+    font-size: 18px;
+    font-weight: bold;
+}
+

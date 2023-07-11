@@ -10,6 +10,7 @@
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="{% static 'admin/sales.css' %}">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 </head>
 
 <body>
@@ -32,12 +33,20 @@
             </div>
             <div class="days"></div>
         </div>
+        <!-- sales -->
         <div id="sales-modal" class="modal">
             <div class="modal-content">
                 <span class="close">&times;</span>
-                <h2 id="modal-date">{{ sales.date }}</h2>
-                <p id="modal-sales">Sales: {{ sales.amount }}</p>
-                <!-- Add other details as needed -->
+                <div id="modal-date"></div>
+                <!-- Remove the existing <h2> and <p> elements -->
+            </div>
+        </div>
+        <!-- detail_sale -->
+        <div id="detail-sales-modal" class="modal2">
+            <div class="modal-content2">
+                <span class="close2">&times;</span>
+                <div id="modal-sales"></div>
+                <!-- Remove the existing <h2> and <p> elements -->
             </div>
         </div>
         <div id="total-sales">

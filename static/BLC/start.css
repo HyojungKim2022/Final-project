@@ -125,6 +125,15 @@ td .quantity{
     width: auto;
 }
 
+.warning{
+    padding: 10px;
+}
+
+#warning{
+    color: red;
+    margin-left: 70px;
+}
+
 .check{
     padding: 10px;
     font-weight: bold;
@@ -279,28 +288,33 @@ div.video img {
 
 table {
     width: 100%;
-    text-align: center;
+    /* text-align: center; */
 }
 
 td {
     width: 100%;
     font-size: 18px;
+    border-spacing: 5px;
+}
+
+tr #items_list{
+    border-spacing: 2px;
 }
 
 td .num {
-    width: 15%;
+    width: 20%;
 }
 
 td .name {
-    width: 45%;
+    width: 30%;
 }
 
 td .quantity {
-    width: 15%;
+    width: 38%;
 }
 
 td .price {
-    width: 15%;
+    width: 30%;
 }
 
 /* .bar1 {

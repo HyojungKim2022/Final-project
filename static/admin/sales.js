@@ -1,12 +1,14 @@
-// Calendar Data
-const salesData = {
-  '2023-07-01': 1500000,
-  '2023-07-04': 200,
-  '2023-07-10': 100,
-  '2023-07-15': 300,
-  '2023-07-20': 250,
-  '2023-07-25': 180,
-};
+let salesData = {}
+fetch('/BLC/get_daily_sales/')
+  .then(response => response.json())
+  .then(data => {
+    salesData = data;
+    renderCalendar();
+  })
+  .catch(error => {
+    console.error('Error:', error);
+});
+console.log(salesData);
 
 // Get Current Date
 const currentDate = new Date();
@@ -19,18 +21,18 @@ const nextMonthBtn = document.getElementById('next-month-btn');
 const monthYearLabel = document.getElementById('month-year');
 const daysContainer = document.querySelector('.days');
 const modal = document.getElementById('sales-modal');
+const modal2 = document.getElementById('detail-sales-modal');
 const modalDate = document.getElementById('modal-date');
 const modalSales = document.getElementById('modal-sales');
 const closeModalBtn = document.getElementsByClassName('close')[0];
+const closeModalBtn2 = document.getElementsByClassName('close2')[0];
 const totalSalesAmount = document.getElementById('total-sales-amount');
 
 // Event Listeners
 prevMonthBtn.addEventListener('click', showPrevMonth);
 nextMonthBtn.addEventListener('click', showNextMonth);
 closeModalBtn.addEventListener('click', closeModal);
-
-// Initial Calendar Render
-renderCalendar();
+closeModalBtn2.addEventListener('click', closeModal2);
 
 // Function to Render Calendar
 function renderCalendar() {
@@ -152,32 +154,66 @@ function showNextMonth() {
   renderCalendar();
 }
 
-// Function to Open Modal and Show Sales Details
-//   function openModal(date) {
-//     modalDate.textContent = getDateString(date);
-//     const salesKey = getDateString(date);
-//     modalSales.textContent = `Sales: ${salesData[salesKey] ? salesData[salesKey] : 'No sales'}`;
-
-//     modal.style.display = 'flex';
-//   }
-
 function openModal(date) {
   const salesKey = getDateString(date);
-  const salesUrl = `/get_sales_details/${salesKey}/`;
-
+  const salesUrl = `/BLC/get_sales/${salesKey}/`;
+  
   fetch(salesUrl)
-    .then(response => response.text())
+    .then(response => response.json())
     .then(data => {
-      modal.innerHTML = data;
+      const modalDate = document.getElementById('modal-date');
+
+      let salesHTML = '';
+      salesHTML += `<table class=date><thead><tr><th class='sale_date'>일자</th><th class='sale_id'>판매번호</th><th class='sale_price'>총 판매액</th></tr></thead><tbody>`
+      data.sales.forEach(sale => {
+        salesHTML += `<tr><td class='sale_date'>${sale.sale_date}</td>`;
+        salesHTML += `<td class='sale_id' onclick='openModalOnSaleId(${sale.sale_id})'>${sale.sale_id}</td>`;
+        salesHTML += `<td class='sale_price'>${sale.total_price.toLocaleString('ko-kr')}\\</td></tr>`;
+      });
+      salesHTML += `</tbody></table>`;
+
+      modalDate.innerHTML = salesHTML;
+      
       modal.style.display = 'flex';
     })
     .catch(error => console.log(error));
 }
 
+function openModalOnSaleId(saleId) {
+  const saleDetailsUrl = `/BLC/get_detail_sales/${saleId}/`;
+  
+  fetch(saleDetailsUrl)
+    .then(response => response.json())
+    .then(data => {
+      const modalSales = document.getElementById('modal-sales');
+      let salesHTML = ``;
+      salesHTML += `<h2>판매번호 : ${saleId}</h2>`
+      salesHTML += `<table class=detail><thead><tr><th class='item_id'>id</th><th class='item_name'>품명</th><th class='item_quantity'>개수</th><th class='unit_price'>가격</th><th class='item_price'>총 가격</th></tr></thead><tbody>`;
+      data.detail_sales.forEach(detail_sale => {
+        salesHTML += `<tr><td class='item_id'>${detail_sale.item}</td>`;
+        salesHTML += `<td class='item_name'>${detail_sale.item__item_name}</td>`;
+        salesHTML += `<td class='item_quantity'>${detail_sale.quantity}</td>`;
+        salesHTML += `<td class='unit_price'>${detail_sale.unit_price.toLocaleString('ko-kr')}</td>`
+        salesHTML += `<td class='item_price'>${(detail_sale.quantity * detail_sale.unit_price).toLocaleString('ko-kr')}</td></tr>`;
+      });
+      salesHTML += `</tbody></table>`;
+
+      modalSales.innerHTML = salesHTML;
+      modal2.style.display = 'flex';
+    })
+    .catch(error => console.log(error));
+}
+
+
 // Function to Close Modal
 function closeModal() {
   modal.style.display = 'none';
 }
+// Function to Close Modal2
+function closeModal2() {
+  modal2.style.display = 'none';
+}
+
 
 // Helper Function to Get Date String in "YYYY-MM-DD" Format
 function getDateString(date) {

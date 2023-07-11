@@ -1,12 +1,16 @@
-import cv2
 from django.shortcuts import render
 from django.http import StreamingHttpResponse, JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+from BLC.models import Sales, DetailSale, Items, Store, Stock
 
-from .make_prediction import make_predict, get_bndbox, calculate_price
+import cv2
+import datetime
+from .make_prediction2 import make_predict, draw_bndbox, calculate_price
 from ..model_init import init_model
 
 
-score_thr = 0.9
+score_thr_low = 0.6
+score_thr_high = 0.9
 model = init_model()
 
 total_amount = 0
@@ -15,7 +19,9 @@ each_amount = {}
 def show_start_page(request):
     return render(request, 'BLC/start.html')
 
-path = 'C:/Users/thffh/Documents/project/final/test/IMG_1873.mov'
+# 테스트용 비디오
+path = 'C:/Users/thffh/Documents/project/final/media/IMG_3089.mov'
+
 def webcam_stream(request):
     # cap = cv2.VideoCapture(0)
     cap = cv2.VideoCapture(path, apiPreference=None)
@@ -25,22 +31,26 @@ def webcam_stream(request):
         
         if not ret:
             break
-    
-        result = make_predict(model, frame, score_thr)
+        
+        frame = cv2.resize(frame, (1333, 800))
+        # 모델 예측
+        result = make_predict(model, frame, score_thr_low, score_thr_high)
         
         # 인식 테스트를 위한 bnd 박스 그리기
-        # total_amount, each_amount = calculate_price(result, price_dict)
+        frame = draw_bndbox(frame, result, score_thr_high)
+
+        # 가격 db로부터 가져오기
         global total_amount, each_amount
-        total_amount, each_amount = calculate_price(result)
+        total_amount, each_amount = calculate_price(result, score_thr_high)
 
         _, img_encoded = cv2.imencode('.jpg', frame)
-        
+
         yield (b'--frame\r\n'
             b'Content-Type: image/jpeg\r\n\r\n' + img_encoded.tobytes() + b'\r\n\r\n')
-        
-
     cap.release()
 
+
+# calculate_price로부터 계산된 값을 json형식으로 return
 def get_amount(request):
     global total_amount, each_amount
     data = {
@@ -49,6 +59,7 @@ def get_amount(request):
     }
     return JsonResponse(data)
 
+# 비디오 출력
 def video_start(request):
     return StreamingHttpResponse(webcam_stream(request), content_type='multipart/x-mixed-replace; boundary=frame')
 
@@ -56,10 +67,6 @@ def video_start(request):
 
 # 결제 버튼 클릭시 결제 정보 sales 및 detail_sale db에 저장
 # 결제 완료 출력 시 stock db 변경
-from BLC.models import Sales, DetailSale, Items, Store, Stock
-import datetime
-from django.views.decorators.csrf import csrf_exempt
-
 @csrf_exempt
 def process_payment(request):
     # Sales 데이터베이스에 결제 정보 저장
@@ -75,13 +82,6 @@ def process_payment(request):
         item = Items.objects.get(item_name=item_name)
         unit_price = price * quantity
         DetailSale.objects.create(sale=sale, item=item, quantity=quantity, unit_price=unit_price)
-
-
-    # for item_id, (price, quantity) in each_amount.items():
-    #     item = Items.objects.get(item_id=item_id)
-    #     unit_price = price * quantity
-    #     DetailSale.objects.create(sale=sale, item=item, quantity=quantity, unit_price=unit_price)
-
 
     # 재고 데이터베이스 업데이트
     for item_name, (price, quantity) in each_amount.items():
