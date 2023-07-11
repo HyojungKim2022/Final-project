@@ -1,5 +1,5 @@
 """
-make a new image with two snack
+make a new image with two snacks
 """
 
 import glob

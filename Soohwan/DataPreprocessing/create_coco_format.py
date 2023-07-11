@@ -27,30 +27,6 @@ def create_LICENSE():
     return LICENSE
 
 
-def create_category_number(categorys):
-    category_list = []
-    for key, value in categorys.items():
-        category = {
-            "supercategory": key,
-            "name": value,
-            "id": value
-        }
-        category_list.append(category)
-    return category_list
-
-
-def create_category_number_ver2(categorys):
-    category_list = []
-    for key, value in categorys.items():
-        category = {
-            "supercategory": value,
-            "name": key,
-            "id": key
-        }
-        category_list.append(category)
-    return category_list
-
-
 def create_category_name(categorys):
     category_list = []
     for key, value in categorys.items():
@@ -63,12 +39,24 @@ def create_category_name(categorys):
     return category_list
 
 
-def create_category_name_ver2(categorys):
+def create_category_name_title(categorys):
+    category_list = []
+    for key, value in categorys.items():
+        category = {
+            "supercategory": key,
+            "name": value,
+            "id": value
+        }
+        category_list.append(category)
+    return category_list
+
+
+def create_category_number(categorys):
     category_list = []
     for key, value in categorys.items():
         category = {
             "supercategory": value,
-            "name": value,
+            "name": key,
             "id": key
         }
         category_list.append(category)
