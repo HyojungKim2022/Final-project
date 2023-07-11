@@ -39,6 +39,18 @@ def create_category_number(categorys):
     return category_list
 
 
+def create_category_number_ver2(categorys):
+    category_list = []
+    for key, value in categorys.items():
+        category = {
+            "supercategory": value,
+            "name": key,
+            "id": key
+        }
+        category_list.append(category)
+    return category_list
+
+
 def create_category_name(categorys):
     category_list = []
     for key, value in categorys.items():
@@ -46,6 +58,18 @@ def create_category_name(categorys):
             "supercategory": key,
             "name": key,
             "id": value
+        }
+        category_list.append(category)
+    return category_list
+
+
+def create_category_name_ver2(categorys):
+    category_list = []
+    for key, value in categorys.items():
+        category = {
+            "supercategory": value,
+            "name": value,
+            "id": key
         }
         category_list.append(category)
     return category_list
