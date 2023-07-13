@@ -13,6 +13,11 @@
  <li>Webpage - @HyojungKim2022</li>
  <li>Deeplearning - </li>
 </ul>
+<h2>Our project info</h2>
+ 
+<ul>
+ <img src = "https://lh3.googleusercontent.com/K03sZCppkh262WX3PevvUfMVnir2bIaQjb9S1uqx9rwd8KQqK9_9fDb4Wp5lJcJxrlcHHIhEOSJhhGZyumYMiu9TAwjCIi1RnarGQDvRbQziMUYhETEcBbK-5nArtlt7BKf6xatdsZWv7kRFx-4GApFQZQ=s2048">
+</ul>
   
 <h2>Stacks</h2>
 <h3>Environment</h3>
