@@ -1,4 +1,4 @@
-# BLC project(Final)
+# BLC(BarcodeLess Calculator) project
 
 <h2>Project Summary</h2>
 <p>Calculate price with the product's pictures</p>
@@ -17,6 +17,7 @@
  
 <ul>
  <img src = "https://lh3.googleusercontent.com/K03sZCppkh262WX3PevvUfMVnir2bIaQjb9S1uqx9rwd8KQqK9_9fDb4Wp5lJcJxrlcHHIhEOSJhhGZyumYMiu9TAwjCIi1RnarGQDvRbQziMUYhETEcBbK-5nArtlt7BKf6xatdsZWv7kRFx-4GApFQZQ=s2048">
+ <p>영상으로 상품을 인식하여 간편하게 가격을 계산</p>
 </ul>
   
 <h2>Stacks</h2>
@@ -51,6 +52,7 @@
   <a href = "https://github.com/open-mmlab/mmdetection/tree/main/projects/EfficientDet"><img src="https://img.shields.io/badge/efficeint-det-181717?style=for-the-badge&logo=github&logoColor=white"></a>
 </div>
 <br>
+
 <h3>Communication & plan</h3>
 <div>
   <img src="https://img.shields.io/badge/slack-4A154B?style=for-the-badge&logo=slack&logoColor=white">
