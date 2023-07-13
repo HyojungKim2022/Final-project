@@ -54,7 +54,7 @@
 <h3>Communication & plan</h3>
 <div>
   <img src="https://img.shields.io/badge/slack-4A154B?style=for-the-badge&logo=slack&logoColor=white">
-  <img src="https://img.shields.io/badge/notion-000000?style=for-the-badge&logo=notion&logoColor=white">
+  <a href = "https://www.notion.so/BLC-97cf215d8f7f4a9aab364860b1decc4d?pvs=4"><img src="https://img.shields.io/badge/notion-000000?style=for-the-badge&logo=notion&logoColor=white"></a>
 </div>
   
 
