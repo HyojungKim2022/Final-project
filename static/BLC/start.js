@@ -62,7 +62,7 @@ $(document).ready(function () {
         items_list.append(itemList);
     }
 
-    setInterval(function () {
+    var intervalId = setInterval(function () {
         $.ajax({
             url: 'get_amount/',
             type: 'GET',
@@ -71,11 +71,34 @@ $(document).ready(function () {
                 var totalAmount = data.total_amount;
                 var eachAmount = data.each_amount;
                 updateAmount(totalAmount, eachAmount);
+            },
+            error: function (xhr, status, error) {
+                // Django 서버가 다운되었을 때 처리할 작업을 여기에 추가합니다.
+                clearInterval(intervalId);  // Interval을 중지합니다.
+                console.log("Django 서버가 다운되었습니다. JavaScript 함수를 중지합니다.");
             }
         });
     }, 1000);
 });
 
+
+
+// 결재버튼시
+document.querySelector('.payment').addEventListener("click", function(){
+    $.ajax({
+        url: 'pause_video/',
+        type: 'GET',
+        data:{'data':0}
+    })
+});
+// 취소시
+document.querySelector('.close').addEventListener("click", function(){
+    $.ajax({
+        url: 'pause_video/',
+        type: 'GET',
+        data:{'data':1}
+    })
+});
 
 document.querySelector('.Yes').addEventListener("click", function() {
     $.ajax({
@@ -85,6 +108,11 @@ document.querySelector('.Yes').addEventListener("click", function() {
         success: function(response) {
             // 결제 완료 메시지 출력 등 원하는 동작 수행
             console.log(response.message);
+
+            setTimeout(() => {
+                window.location.href = '/BLC/'                
+            }, 2000);
+            
         }
     });
 });

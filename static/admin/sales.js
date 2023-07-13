@@ -8,7 +8,6 @@ fetch('/BLC/get_daily_sales/')
   .catch(error => {
     console.error('Error:', error);
 });
-console.log(salesData);
 
 // Get Current Date
 const currentDate = new Date();
@@ -164,11 +163,12 @@ function openModal(date) {
       const modalDate = document.getElementById('modal-date');
 
       let salesHTML = '';
+      salesHTML += `<h1>BLC</h1>`
       salesHTML += `<table class=date><thead><tr><th class='sale_date'>일자</th><th class='sale_id'>판매번호</th><th class='sale_price'>총 판매액</th></tr></thead><tbody>`
       data.sales.forEach(sale => {
         salesHTML += `<tr><td class='sale_date'>${sale.sale_date}</td>`;
         salesHTML += `<td class='sale_id' onclick='openModalOnSaleId(${sale.sale_id})'>${sale.sale_id}</td>`;
-        salesHTML += `<td class='sale_price'>${sale.total_price.toLocaleString('ko-kr')}\\</td></tr>`;
+        salesHTML += `<td class='sale_price'>\\${sale.total_price.toLocaleString('ko-kr')}</td></tr>`;
       });
       salesHTML += `</tbody></table>`;
 
@@ -188,13 +188,13 @@ function openModalOnSaleId(saleId) {
       const modalSales = document.getElementById('modal-sales');
       let salesHTML = ``;
       salesHTML += `<h2>판매번호 : ${saleId}</h2>`
-      salesHTML += `<table class=detail><thead><tr><th class='item_id'>id</th><th class='item_name'>품명</th><th class='item_quantity'>개수</th><th class='unit_price'>가격</th><th class='item_price'>총 가격</th></tr></thead><tbody>`;
+      salesHTML += `<table class=detail><thead><tr><th class='item_id'>id</th><th class='item_name'>품명</th><th class='item_quantity'>개수</th><th class='unit_price'>가격(\\)</th><th class='item_price'>총 가격(\\)</th></tr></thead><tbody>`;
       data.detail_sales.forEach(detail_sale => {
         salesHTML += `<tr><td class='item_id'>${detail_sale.item}</td>`;
         salesHTML += `<td class='item_name'>${detail_sale.item__item_name}</td>`;
         salesHTML += `<td class='item_quantity'>${detail_sale.quantity}</td>`;
-        salesHTML += `<td class='unit_price'>${detail_sale.unit_price.toLocaleString('ko-kr')}</td>`
-        salesHTML += `<td class='item_price'>${(detail_sale.quantity * detail_sale.unit_price).toLocaleString('ko-kr')}</td></tr>`;
+        salesHTML += `<td class='unit_price'>${(detail_sale.unit_price/detail_sale.quantity).toLocaleString('ko-kr')}</td>`
+        salesHTML += `<td class='item_price'>${detail_sale.unit_price.toLocaleString('ko-kr')}</td></tr>`;
       });
       salesHTML += `</tbody></table>`;
 

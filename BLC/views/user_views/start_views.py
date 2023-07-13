@@ -9,8 +9,8 @@ from .make_prediction2 import make_predict, draw_bndbox, calculate_price
 from ..model_init import init_model
 
 
-score_thr_low = 0.6
-score_thr_high = 0.9
+score_thr_low = 0.65
+score_thr_high = 0.90
 model = init_model()
 
 total_amount = 0
@@ -19,16 +19,38 @@ each_amount = {}
 def show_start_page(request):
     return render(request, 'BLC/start.html')
 
+
+global boolean_pause
+boolean_pause = False
+
+@csrf_exempt
+def pause_video(request):
+    global boolean_pause
+    data = request.GET.get('data')
+    if data == '0':
+        boolean_pause = True
+    else:
+        boolean_pause = False
+    return JsonResponse({'status':'success'})
+
 # 테스트용 비디오
-path = 'C:/Users/thffh/Documents/project/final/media/IMG_3089.mov'
+path = 'C:/Users/thffh/Downloads/videos/400/video_08.mov'
 
 def webcam_stream(request):
+    global boolean_pause
+    global prev_ret, prev_frame
     # cap = cv2.VideoCapture(0)
     cap = cv2.VideoCapture(path, apiPreference=None)
 
     while True:
-        ret, frame = cap.read()
-        
+        # True : 결제하기 눌렀을때
+        if boolean_pause:
+            ret, frame = prev_ret, prev_frame
+        # 기본 or 취소하기
+        else:
+            ret, frame = cap.read()
+            prev_ret, prev_frame = ret, frame
+
         if not ret:
             break
         
@@ -44,9 +66,10 @@ def webcam_stream(request):
         total_amount, each_amount = calculate_price(result, score_thr_high)
 
         _, img_encoded = cv2.imencode('.jpg', frame)
-
+        
         yield (b'--frame\r\n'
             b'Content-Type: image/jpeg\r\n\r\n' + img_encoded.tobytes() + b'\r\n\r\n')
+
     cap.release()
 
 
@@ -80,7 +103,7 @@ def process_payment(request):
     # DetailSale 데이터베이스에 상품 정보 저장
     for item_name, (price, quantity) in each_amount.items():
         item = Items.objects.get(item_name=item_name)
-        unit_price = price * quantity
+        unit_price = price
         DetailSale.objects.create(sale=sale, item=item, quantity=quantity, unit_price=unit_price)
 
     # 재고 데이터베이스 업데이트

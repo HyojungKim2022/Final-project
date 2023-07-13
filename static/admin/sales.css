@@ -305,3 +305,35 @@ td.item_name{
 td.item_quantity, td.unit_price, td.item_price{
   text-align: right;
 }
+
+.sale_id{
+  font-weight: bold;
+  padding: 5px;
+  text-decoration: underline;
+}
+
+table.date{
+  padding: 5px;
+  margin-top: 50px;
+}
+
+table.detail{
+  padding: 3px;
+}
+
+h1{
+  font-weight: bold;
+  color: #557863;
+  text-shadow: 2px 2px 2px #3C5145;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.date thead{
+  background-color: #557863;
+  font-size: 18px;
+}
+.detail thead{
+  background-color: #557863;
+  font-size: 17px;
+}

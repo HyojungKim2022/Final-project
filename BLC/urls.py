@@ -10,6 +10,7 @@ urlpatterns = [
     path('video_start/', start_views.video_start, name='video_start'),
     path('get_amount/', start_views.get_amount, name='get_amount'),
     path('process_payment/', start_views.process_payment, name='process_payment'),
+    path('pause_video/', start_views.pause_video, name='pause_video'),
     
     path('admin/', admin_views.show_main_page, name='admin_main'),
     path('admin/stock/', stock_views.show_stock_page, name='show_stock_page'),

@@ -42,7 +42,6 @@ def make_predict(model, frame, score_thr_low, score_thr_high):
                     h_height = (y_max_h - y_min_h)
 
                     if overlap_x * overlap_y > h_width * h_height * 0.5:
-                        print('low : ', low_res, '\n')
                         remove_list.append(i) 
 
         if remove_list:       
@@ -86,7 +85,7 @@ def calculate_price(result_dict, score_thr_high):
                 total_amount += price
                 
                 if item_name not in each_amount:
-                    each_amount[item_name] = [each_amount.get(item_name, 0) + price, 1]
+                    each_amount[item_name] = [price, 1]
                 else:
                     each_amount[item_name][0] += price
                     each_amount[item_name][1] += 1

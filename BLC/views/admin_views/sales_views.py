@@ -20,7 +20,6 @@ def get_daily_sales(request):
         sale_date.strftime('%Y-%m-%d'):int(total_amount)
         for sale_date, total_amount in daily_sales
     }
-    print(response_data)
     return JsonResponse(response_data, safe=False)
 
 # 판매사항
@@ -32,7 +31,6 @@ def get_sales(request, salesKey):
     response_data = {
         'sales': sales_list
     }
-    print(response_data)
     return JsonResponse(response_data)
 
 # 세부 판매사항
@@ -42,5 +40,4 @@ def get_detail_sales(request, saleId):
     respon_data = {
         'detail_sales':detail_sale
     }
-    print(respon_data)
     return JsonResponse(respon_data)
