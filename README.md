@@ -40,10 +40,10 @@
 <h3>Deep-Learning</h3>
 <p>Model</p>
 <div>
-  <img src="https://img.shields.io/badge/yolov3-181717?style=for-the-badge&logo=github&logoColor=white">
-  <img src="https://img.shields.io/badge/yolov5-181717?style=for-the-badge&logo=github&logoColor=white">
-  <img src="https://img.shields.io/badge/faster_rcnn-181717?style=for-the-badge&logo=github&logoColor=white">
-  <img src="https://img.shields.io/badge/efficeint-det-181717?style=for-the-badge&logo=github&logoColor=white">
+  <a href = "https://github.com/open-mmlab/mmdetection/tree/main/configs/yolo"><img src="https://img.shields.io/badge/yolov3-181717?style=for-the-badge&logo=github&logoColor=white"></a>
+  <a href = "https://github.com/ultralytics/yolov5"><img src="https://img.shields.io/badge/yolov5-181717?style=for-the-badge&logo=github&logoColor=white"></a>
+  <a href = "https://github.com/open-mmlab/mmdetection/tree/main/configs/faster_rcnn"><img src="https://img.shields.io/badge/faster_rcnn-181717?style=for-the-badge&logo=github&logoColor=white"></a>
+  <a href = "https://github.com/open-mmlab/mmdetection/tree/main/projects/EfficientDet"<img src="https://img.shields.io/badge/efficeint-det-181717?style=for-the-badge&logo=github&logoColor=white"></a>
 </div>
 <br>
 <h3>Communication & plan</h3>
