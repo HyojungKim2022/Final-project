@@ -10,7 +10,7 @@
 
 <h2>Our team</h2>
 <ul>
- <li>Webpage - </li>
+ <li>Webpage - @HyojungKim2022</li>
  <li>Deeplearning - </li>
 </ul>
   
