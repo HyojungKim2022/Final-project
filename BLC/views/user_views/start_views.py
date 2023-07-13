@@ -10,7 +10,7 @@ from ..model_init import init_model
 
 
 score_thr_low = 0.65
-score_thr_high = 0.90
+score_thr_high = 0.95
 model = init_model()
 
 total_amount = 0
