@@ -8,11 +8,6 @@
    <li>2023-06-14 ~ 2023-07-13</li>
  </ul>
 
-<h2>Our team</h2>
-<ul>
- <li>Webpage - @HyojungKim2022</li>
- <li>Deeplearning - </li>
-</ul>
 <h2>Our project info</h2>
  
 <ul>
